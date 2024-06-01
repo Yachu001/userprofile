@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="">
+  <h3 class="d-flex justify-content-center">Personel Details</h3>
+<div class="row border border-light border-">
+  <div class="col-sm-4 p-3 bg-danger text-white border border-end border-light">Name:</div>
+  <div class="col-sm-8 p-3 bg-success text-white">{{object.firstname}} {{object.lastname}}</div>
+</div>
+<div class="row border border-light border-top-0">
+  <div class="col-sm-2 p-3 bg-danger text-white border border-end border-light">DOB:</div>
+  <div class="col-sm-4 p-3 bg-success text-white border border-end border-light">{{object.dob}}</div>
+  <div class="col-sm-2 p-3 bg-danger text-white border border-end border-light">Gender:</div>
+  <div class="col-sm-4 p-3 bg-success text-white">{{object.gender}}</div>
+</div>
+<div class="row border border-light border-top-0">
+  <div class="col-sm-2 p-3 bg-danger text-white border border-end border-light">Address:</div>
+  <div class="col-sm-6 p-3 bg-success text-white border border-end border-light">{{object.address}}</div>
+  <div class="col-sm-2 p-3 bg-danger text-white border border-end border-light">Pin Code:</div>
+  <div class="col-sm-2 p-3 bg-success text-white">{{object.pincode}}</div>
+</div>
+<div class="row border border-light border-top-0">
+  <div class="col-sm-3 p-3 bg-danger text-white border border-end border-light">Skills:</div>
+  <div class="col-sm-3 p-3 bg-success text-white border border-end border-light">{{object.skill1}}</div>
+  <div class="col-sm-3 p-3 bg-success text-white border border-end border-light">{{object.skill2}}</div>
+  <div class="col-sm-3 p-3 bg-success text-white border border-end border-light">{{object.skill3}}</div>
+  
+</div>
+</div>
+<!--End of personal details-->
+<div class="">
+  <h3 class="d-flex justify-content-center mt-3">Education</h3>
+  <div class="row border  ">
+    <div class="col-sm-4 p-3 bg-danger text-white border border-end ">Course Name:</div>
+    <div class="col-sm-8 p-3 bg-success text-white">{{object.education_course}}</div>
+  </div>
+  <div class="row border border-light border-">
+    <div class="col-sm-4 p-3 bg-danger text-white border border-end border-light">Institution Name:</div>
+    <div class="col-sm-8 p-3 bg-success text-white">{{object.education_school}}</div>
+  </div>
+  <div class="row border border-light border-">
+    <div class="col-sm-4 p-3 bg-danger text-white border border-end border-light">Start Date:</div>
+    <div class="col-sm-8 p-3 bg-success text-white">{{object.education_start_date}}</div>
+  </div>
+  <div class="row border border-light border-">
+    <div class="col-sm-4 p-3 bg-danger text-white border border-end border-light">End Date:</div>
+    <div class="col-sm-8 p-3 bg-success text-white">{{object.education_end_date}}</div>
+  </div>
+
+</div>
+<!-- End of Education Details  -->
+<div class="">
+  <h3 class="d-flex justify-content-center my-3">Certificate</h3>
+  <div class="row bg-success pt-4 ps-4">
+    <div class="col-sm-6">
+      <div class="card bg-primary text-white" style="width:400px">
+        <div class="card-body">
+          <h2 class="card-title text-white">Course: {{object.certificate_course}}</h2>
+          <p class="card-text">Institution: {{object.certificate_school}}</p>
+        </div>
+        <img class="card-img-bottom" src="{{object.certificate_images.url}}" alt="Card image" style="width:100%">
+      </div>
+
+    </div>
+    <div class="col-sm-6">
+      <div class="card bg-primary text-white" style="width:400px">
+        <div class="card-body">
+          <h4 class="card-title text-white">Course: {{object.certificate_course}}</h4>
+          <p class="card-text">Institution: {{object.certificate_school}}</p>
+        </div>
+        <img class="card-img-bottom" src="{{object.certificate_images.url}}" alt="Card image" style="width:100%">
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--  End of Certificate  -->
+
+<div>
+  <h3 class="d-flex justify-content-center my-3">Project Lists</h3>
+                             <!-- Carousel -->
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                              <!-- Indicators/dots -->
+    <div class="carousel-indicators  ">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active bg-primary"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1" class=" bg-primary"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2" class=" bg-primary"></button>
+    </div>
+  
+                            <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{object.project_image.url}}" alt="Los Angeles" class="d-block w-100">
+        <div class="carousel-caption text-primary">
+          <h3>{{object.project_name}}</h3>
+          <p>{{object.project_summary}}</p>
+          <a href="{{object.project_link}}" class="btn btn-primary">Visit</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{object.project_image.url}}" alt="Chicago" class="d-block w-100">
+        <div class="carousel-caption text-primary">
+          <h3>{{object.project_name}}</h3>
+          <p>{{object.project_summary}}</p>
+          <a href="{{object.project_link}}" class="btn btn-primary">Visit</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{object.project_image.url}}" alt="New York" class="d-block w-100">
+        <div class="carousel-caption text-primary">
+          <h3>{{object.project_name}}</h3>
+          <p>{{object.project_summary}}</p>
+          <a href="{{object.project_link}}" class="btn btn-primary">Visit</a>
+        </div>
+      </div>
+    </div>
+  
+                            <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev " type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bg-primary"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon bg-primary"></span>
+    </button>
+  </div>
+</div>
+<!--   End project lists  -->
+<div class="">
+  <h3 class="d-flex justify-content-center my-3">Contact Details</h3>
+  <div class="row border border-light border-">
+    <div class="col-sm-4 p-3 bg-danger text-white border border-end border-light">Email Address:</div>
+    <div class="col-sm-8 p-3 bg-success text-white">{{object.email}}</div>
+  </div>
+  <div class="row border border-light border-">
+    <div class="col-sm-4 p-3 bg-danger text-white border border-end border-light">Phone Number:</div>
+    <div class="col-sm-8 p-3 bg-success text-white">{{object.phone}}</div>
+  </div>
+  <div class="row border border-light border-">
+    <div class="col-sm-4 p-3 bg-danger text-white border border-end border-light">Whatsapp Number:</div>
+    <div class="col-sm-8 p-3 bg-success text-white">{{object.whatsapp}}</div>
+  </div>
+</div>
+<!-- End of Contact details-->
+
+
+
+
+{% endblock %}

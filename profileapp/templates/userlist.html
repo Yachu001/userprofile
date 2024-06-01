@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<table class="table table-bordered table-striped bg-primary">
+    <thead >
+      <tr class="table-primary text-light">
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Action Buttons</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in userlists %}
+
+      <tr>
+        <td>{{i.firstname}}</td>
+        <td>{{i.lastname}}</td>
+        <td>{{i.email}}</td>
+        <td>
+          <a class="btn btn-primary" href="{% url 'detail' i.id %}">Details</a>
+          <a class="btn btn-warning" href="">Edit</a>
+          <a class="btn btn-danger" href="">Delete</a>
+        </td>
+      </tr>
+        
+      {% endfor%}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
